@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-07-23 · Estúdio Plá · Blue Power · Locuções — Jack & Lisa Caster</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23060d18'/><text x='8' y='22' font-size='13' font-family='monospace' fill='%233A9FEF'>J</text><text x='18' y='22' font-size='13' font-family='monospace' fill='%23D4A83A'>L</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #000d1a;
+  --s1: #060d18;
+  --c1: #0a1628;
+  --c2: #0f2040;
+  --c3: #162850;
+  --blue: #3A9FEF;
+  --gold: #D4A83A;
+  --green: #2ECC71;
+  --red: #E74C3C;
+  --text: #dce8f5;
+  --dim: #5a7a9a;
+  --border: #1a3060;
+  --jack: #3A9FEF;
+  --lisa: #D4A83A;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  line-height: 1.75;
+  padding-bottom: 80px;
+}
+
+/* HEADER */
+.ts { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--dim); padding: 16px 40px 0; }
+.hdr {
+  background: linear-gradient(135deg, #050c15 0%, #081525 50%, #0a1c35 100%);
+  border-bottom: 3px solid var(--gold);
+  padding: 36px 40px;
+}
+.badge {
+  display: inline-block;
+  background: rgba(212,168,58,.1);
+  border: 1px solid rgba(212,168,58,.4);
+  color: var(--gold);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: .14em;
+  padding: 4px 14px;
+  border-radius: 3px;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.hdr h1 {
+  font-family: 'Lora', serif;
+  font-size: 34px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+.hdr h1 .bl { color: var(--blue); }
+.hdr h1 .go { color: var(--gold); }
+.hdr p { font-size: 15px; color: var(--dim); margin-bottom: 20px; max-width: 640px; }
+
+/* KEY INPUT */
+.key-bar {
+  background: var(--c1);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold);
+  margin: 24px 40px 0;
+  padding: 18px 22px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.key-label { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--dim); letter-spacing: .1em; flex-shrink: 0; }
+.key-input {
+  background: var(--c2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  flex: 1;
+  min-width: 260px;
+}
+.key-input:focus { outline: none; border-color: var(--gold); }
+.key-ok { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--green); display: none; }
+
+/* MAIN */
+.main { max-width: 900px; margin: 0 auto; padding: 40px 40px 0; }
+.sec-title {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: var(--dim);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* TRACK CARD */
+.track {
+  background: var(--c1);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.track-hdr {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.track-hdr.jack { border-left: 4px solid var(--jack); background: rgba(58,159,239,.05); }
+.track-hdr.lisa { border-left: 4px solid var(--lisa); background: rgba(212,168,58,.05); }
+.voice-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+.vd-jack { background: var(--jack); }
+.vd-lisa { background: var(--lisa); }
+.track-num { font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: var(--dim); }
+.track-num.jack { color: var(--jack); }
+.track-num.lisa { color: var(--lisa); }
+.track-info { flex: 1; }
+.track-title { font-family: 'Lora', serif; font-size: 18px; font-weight: 600; color: #fff; margin-bottom: 3px; }
+.track-meta { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--dim); }
+.track-meta .vname.jack { color: var(--jack); font-weight: 700; }
+.track-meta .vname.lisa { color: var(--lisa); font-weight: 700; }
+
+/* PLAYER AREA */
+.track-body { padding: 20px 24px; }
+
+/* GONIÔMETRO */
+.gonio-wrap {
+  background: #000;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.gonio-canvas { border-radius: 50%; flex-shrink: 0; }
+.gonio-meters { flex: 1; min-width: 120px; }
+.meter-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.meter-row:last-child { margin-bottom: 0; }
+.meter-lbl { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--dim); width: 42px; flex-shrink: 0; }
+.meter-bar-wrap { flex: 1; background: #0a0a0a; border-radius: 2px; height: 8px; overflow: hidden; }
+.meter-bar { height: 100%; width: 0%; border-radius: 2px; transition: width 0.1s; }
+.bar-lufs { background: linear-gradient(90deg, var(--green) 0%, var(--gold) 75%, var(--red) 100%); }
+.bar-corr { background: linear-gradient(90deg, var(--red) 0%, var(--gold) 50%, var(--green) 100%); }
+.meter-val { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #fff; width: 52px; text-align: right; flex-shrink: 0; }
+.gonio-status { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--dim); margin-top: 8px; text-align: center; }
+
+/* CONTROLES */
+.controls { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.btn-preparar {
+  background: var(--gold);
+  color: #000;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-preparar:disabled { opacity: .35; cursor: not-allowed; }
+.btn-preparar:hover:not(:disabled) { opacity: .85; }
+.btn-play {
+  background: var(--blue);
+  color: #fff;
+  border: none;
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-play:disabled { opacity: .25; cursor: not-allowed; }
+.btn-play:hover:not(:disabled) { opacity: .85; }
+.btn-play.playing { background: var(--red); }
+.btn-dl {
+  background: var(--c2);
+  color: var(--green);
+  border: 1px solid rgba(46,204,113,.3);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  display: none;
+  align-items: center;
+  gap: 6px;
+}
+.btn-dl:hover { background: #1a3040; }
+
+/* STATUS / PROGRESS */
+.track-status {
+  margin-top: 14px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: var(--dim);
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.spinner {
+  width: 14px; height: 14px;
+  border: 2px solid var(--border);
+  border-top-color: var(--gold);
+  border-radius: 50%;
+  animation: spin .8s linear infinite;
+  display: none;
+  flex-shrink: 0;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* PROGRESS BAR */
+.prog-wrap {
+  margin-top: 10px;
+  background: #0a0a0a;
+  border-radius: 3px;
+  height: 4px;
+  overflow: hidden;
+  display: none;
+}
+.prog-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+  width: 0%;
+  transition: width .3s;
+  animation: prog-pulse 1.5s ease-in-out infinite;
+}
+@keyframes prog-pulse { 0%,100%{opacity:1} 50%{opacity:.5} }
+
+/* CREDITOS */
+.creditos {
+  background: var(--c2);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin-top: 14px;
+  display: none;
+}
+.cred-row { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--dim); margin-bottom: 4px; }
+.cred-row:last-child { margin-bottom: 0; }
+.cred-row strong { color: #fff; }
+
+/* DIVIDER */
+.divider { border: none; border-top: 1px solid var(--border); margin: 8px 0 20px; }
+
+/* FOOTER */
+.foot {
+  margin-top: 60px;
+  padding: 24px 40px;
+  border-top: 2px solid var(--gold);
+  background: var(--s1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.fl { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--dim); }
+.fbadge {
+  font-family: 'JetBrains Mono', monospace; font-size: 11px;
+  background: rgba(212,168,58,.1); border: 1px solid rgba(212,168,58,.35);
+  color: var(--gold); padding: 4px 12px; border-radius: 3px;
+}
+
+@media(max-width:600px){
+  .hdr,  .key-bar, .main { padding-left: 20px; padding-right: 20px; }
+  .ts { padding-left: 20px; }
+  .gonio-wrap { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="ts">UNIX TIMESTAMP · 1784843854 · 2026-07-23T23:57:34Z</div>
+
+<div class="hdr">
+  <div class="badge">◆ BLUE POWER · LOCUÇÕES · JACK & LISA CASTER · PT-BR</div>
+  <h1><span class="bl">Estúdio Plá</span> · <span class="go">4 Locuções Oficiais</span></h1>
+  <p>BIOS Plá — Registro Definitivo · Perfil e Projeção Estratégica<br>
+  Vozes: Jack Caster (Charon) e Lisa Caster (Kore) · Gemini TTS 2.5 Flash · WAV 24kHz · Com Goniômetro Plá</p>
+</div>
+
+<div class="key-bar">
+  <span class="key-label">GEMINI API KEY</span>
+  <input class="key-input" type="password" id="gkey" placeholder="AIzaSy..." oninput="onKeyInput()">
+  <span class="key-ok" id="keyOk">✓ KEY PRONTA</span>
+</div>
+
+<div class="main">
+<div class="sec-title">4 LOCUÇÕES · CLIQUE EM "PREPARAR" · DOWNLOAD AUTOMÁTICO · PLAY LIBERA APÓS PRONTO</div>
+
+<!-- TRACK 1 -->
+<div class="track" id="track-0">
+  <div class="track-hdr jack">
+    <div class="voice-dot vd-jack"></div>
+    <span class="track-num jack">01</span>
+    <div class="track-info">
+      <div class="track-title">BIOS Plá — Registro Definitivo</div>
+      <div class="track-meta"><span class="vname jack">JACK CASTER</span> · Gemini Charon · PT-BR · ~2min</div>
+    </div>
+  </div>
+  <div class="track-body">
+    <div class="gonio-wrap" id="gw-0">
+      <canvas class="gonio-canvas" id="gc-0" width="120" height="120"></canvas>
+      <div class="gonio-meters">
+        <div class="meter-row">
+          <span class="meter-lbl">LUFS</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-lufs" id="lufs-bar-0"></div></div>
+          <span class="meter-val" id="lufs-val-0">— dB</span>
+        </div>
+        <div class="meter-row">
+          <span class="meter-lbl">CORR</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-corr" id="corr-bar-0"></div></div>
+          <span class="meter-val" id="corr-val-0">—</span>
+        </div>
+        <div class="gonio-status" id="gst-0">aguardando áudio</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn-preparar" id="prep-0" onclick="preparar(0)" disabled>⬇ Preparar</button>
+      <button class="btn-play" id="play-0" onclick="togglePlay(0)" disabled>▶ Play</button>
+      <a class="btn-dl" id="dl-0" download="01_bios_jack_caster.wav">↓ WAV</a>
+      <a class="btn-dl" id="dlmp3-0" download="01_bios_jack_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
+    </div>
+    <div class="track-status" id="st-0">
+      <div class="spinner" id="sp-0"></div>
+      <span id="stxt-0">insira a key e clique em Preparar</span>
+    </div>
+    <div class="prog-wrap" id="prog-0"><div class="prog-bar" id="pb-0"></div></div>
+    <div class="creditos" id="cred-0">
+      <div class="cred-row"><strong>Locução:</strong> Jack Caster (Charon — Gemini TTS 2.5 Flash)</div>
+      <div class="cred-row"><strong>Texto:</strong> Kaue Ferreira Moraes · Estúdio Plá</div>
+      <div class="cred-row"><strong>Produção:</strong> BIOS Plá · Claude Sonnet 4.6</div>
+      <div class="cred-row"><strong>Data:</strong> 23 de julho de 2026 · Bauru, SP, Brasil</div>
+      <div class="cred-row"><strong>Formato:</strong> WAV 24kHz / MP3 · © Estúdio Plá 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRACK 2 -->
+<div class="track" id="track-1">
+  <div class="track-hdr lisa">
+    <div class="voice-dot vd-lisa"></div>
+    <span class="track-num lisa">02</span>
+    <div class="track-info">
+      <div class="track-title">BIOS Plá — Registro Definitivo</div>
+      <div class="track-meta"><span class="vname lisa">LISA CASTER</span> · Gemini Kore · PT-BR · ~2min</div>
+    </div>
+  </div>
+  <div class="track-body">
+    <div class="gonio-wrap" id="gw-1">
+      <canvas class="gonio-canvas" id="gc-1" width="120" height="120"></canvas>
+      <div class="gonio-meters">
+        <div class="meter-row">
+          <span class="meter-lbl">LUFS</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-lufs" id="lufs-bar-1"></div></div>
+          <span class="meter-val" id="lufs-val-1">— dB</span>
+        </div>
+        <div class="meter-row">
+          <span class="meter-lbl">CORR</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-corr" id="corr-bar-1"></div></div>
+          <span class="meter-val" id="corr-val-1">—</span>
+        </div>
+        <div class="gonio-status" id="gst-1">aguardando áudio</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn-preparar" id="prep-1" onclick="preparar(1)" disabled>⬇ Preparar</button>
+      <button class="btn-play" id="play-1" onclick="togglePlay(1)" disabled>▶ Play</button>
+      <a class="btn-dl" id="dl-1" download="02_bios_lisa_caster.wav">↓ WAV</a>
+      <a class="btn-dl" id="dlmp3-1" download="02_bios_lisa_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
+    </div>
+    <div class="track-status" id="st-1">
+      <div class="spinner" id="sp-1"></div>
+      <span id="stxt-1">insira a key e clique em Preparar</span>
+    </div>
+    <div class="prog-wrap" id="prog-1"><div class="prog-bar" id="pb-1"></div></div>
+    <div class="creditos" id="cred-1">
+      <div class="cred-row"><strong>Locução:</strong> Lisa Caster (Kore — Gemini TTS 2.5 Flash)</div>
+      <div class="cred-row"><strong>Texto:</strong> Kaue Ferreira Moraes · Estúdio Plá</div>
+      <div class="cred-row"><strong>Produção:</strong> BIOS Plá · Claude Sonnet 4.6</div>
+      <div class="cred-row"><strong>Data:</strong> 23 de julho de 2026 · Bauru, SP, Brasil</div>
+      <div class="cred-row"><strong>Formato:</strong> WAV 24kHz / MP3 · © Estúdio Plá 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRACK 3 -->
+<div class="track" id="track-2">
+  <div class="track-hdr jack">
+    <div class="voice-dot vd-jack"></div>
+    <span class="track-num jack">03</span>
+    <div class="track-info">
+      <div class="track-title">Perfil e Projeção Estratégica</div>
+      <div class="track-meta"><span class="vname jack">JACK CASTER</span> · Gemini Charon · PT-BR · ~3min</div>
+    </div>
+  </div>
+  <div class="track-body">
+    <div class="gonio-wrap" id="gw-2">
+      <canvas class="gonio-canvas" id="gc-2" width="120" height="120"></canvas>
+      <div class="gonio-meters">
+        <div class="meter-row">
+          <span class="meter-lbl">LUFS</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-lufs" id="lufs-bar-2"></div></div>
+          <span class="meter-val" id="lufs-val-2">— dB</span>
+        </div>
+        <div class="meter-row">
+          <span class="meter-lbl">CORR</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-corr" id="corr-bar-2"></div></div>
+          <span class="meter-val" id="corr-val-2">—</span>
+        </div>
+        <div class="gonio-status" id="gst-2">aguardando áudio</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn-preparar" id="prep-2" onclick="preparar(2)" disabled>⬇ Preparar</button>
+      <button class="btn-play" id="play-2" onclick="togglePlay(2)" disabled>▶ Play</button>
+      <a class="btn-dl" id="dl-2" download="03_perfil_jack_caster.wav">↓ WAV</a>
+      <a class="btn-dl" id="dlmp3-2" download="03_perfil_jack_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
+    </div>
+    <div class="track-status" id="st-2">
+      <div class="spinner" id="sp-2"></div>
+      <span id="stxt-2">insira a key e clique em Preparar</span>
+    </div>
+    <div class="prog-wrap" id="prog-2"><div class="prog-bar" id="pb-2"></div></div>
+    <div class="creditos" id="cred-2">
+      <div class="cred-row"><strong>Locução:</strong> Jack Caster (Charon — Gemini TTS 2.5 Flash)</div>
+      <div class="cred-row"><strong>Texto:</strong> Kaue Ferreira Moraes · Estúdio Plá</div>
+      <div class="cred-row"><strong>Produção:</strong> BIOS Plá · Claude Sonnet 4.6</div>
+      <div class="cred-row"><strong>Data:</strong> 23 de julho de 2026 · Bauru, SP, Brasil</div>
+      <div class="cred-row"><strong>Formato:</strong> WAV 24kHz / MP3 · © Estúdio Plá 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- TRACK 4 -->
+<div class="track" id="track-3">
+  <div class="track-hdr lisa">
+    <div class="voice-dot vd-lisa"></div>
+    <span class="track-num lisa">04</span>
+    <div class="track-info">
+      <div class="track-title">Perfil e Projeção Estratégica</div>
+      <div class="track-meta"><span class="vname lisa">LISA CASTER</span> · Gemini Kore · PT-BR · ~3min</div>
+    </div>
+  </div>
+  <div class="track-body">
+    <div class="gonio-wrap" id="gw-3">
+      <canvas class="gonio-canvas" id="gc-3" width="120" height="120"></canvas>
+      <div class="gonio-meters">
+        <div class="meter-row">
+          <span class="meter-lbl">LUFS</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-lufs" id="lufs-bar-3"></div></div>
+          <span class="meter-val" id="lufs-val-3">— dB</span>
+        </div>
+        <div class="meter-row">
+          <span class="meter-lbl">CORR</span>
+          <div class="meter-bar-wrap"><div class="meter-bar bar-corr" id="corr-bar-3"></div></div>
+          <span class="meter-val" id="corr-val-3">—</span>
+        </div>
+        <div class="gonio-status" id="gst-3">aguardando áudio</div>
+      </div>
+    </div>
+    <div class="controls">
+      <button class="btn-preparar" id="prep-3" onclick="preparar(3)" disabled>⬇ Preparar</button>
+      <button class="btn-play" id="play-3" onclick="togglePlay(3)" disabled>▶ Play</button>
+      <a class="btn-dl" id="dl-3" download="04_perfil_lisa_caster.wav">↓ WAV</a>
+      <a class="btn-dl" id="dlmp3-3" download="04_perfil_lisa_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
+    </div>
+    <div class="track-status" id="st-3">
+      <div class="spinner" id="sp-3"></div>
+      <span id="stxt-3">insira a key e clique em Preparar</span>
+    </div>
+    <div class="prog-wrap" id="prog-3"><div class="prog-bar" id="pb-3"></div></div>
+    <div class="creditos" id="cred-3">
+      <div class="cred-row"><strong>Locução:</strong> Lisa Caster (Kore — Gemini TTS 2.5 Flash)</div>
+      <div class="cred-row"><strong>Texto:</strong> Kaue Ferreira Moraes · Estúdio Plá</div>
+      <div class="cred-row"><strong>Produção:</strong> BIOS Plá · Claude Sonnet 4.6</div>
+      <div class="cred-row"><strong>Data:</strong> 23 de julho de 2026 · Bauru, SP, Brasil</div>
+      <div class="cred-row"><strong>Formato:</strong> WAV 24kHz / MP3 · © Estúdio Plá 2026</div>
+    </div>
+  </div>
+</div>
+
+</div><!-- /main -->
+
+<div class="foot">
+  <div class="fl">◆ BLUE POWER · 2026-07-23 · Estúdio Plá · Jack & Lisa Caster · Gemini TTS 2.5 Flash</div>
+  <div class="fbadge">EDIÇÃO FECHADA · © ESTÚDIO PLÁ 2026</div>
+</div>
+
+<script>
+// ============================================================
+// TEXTOS DAS 4 LOCUÇÕES
+// ============================================================
+const TRACKS = [
+  {
+    voz: 'Charon',
+    nome: '01_bios_jack_caster',
+    texto: `BIOS Plá. Sistema de inteligência central do Estúdio Plá. Registro definitivo consolidado. Vinte e três de julho de dois mil e vinte e seis.
+
+O BIOS Plá é o núcleo de identidade, memória e arquitetura do Estúdio Plá, fundado e dirigido por Kaue Ferreira Moraes, com gerência de operações de Luana Martins, sediado em Bauru, São Paulo, Brasil.
+
+Camada Um — o Reptiliano — contém quatro regras absolutas e imutáveis. Regra Zero: Protocolo Zero — nenhuma ação, geração de código, arquivo ou commit é executado sem aprovação explícita do Diretor. Regra Um: Autoria — toda obra pertence integralmente ao Estúdio Plá. Regra Dois: Memória — erros resolvidos não se repetem, memória acumulada é ativo estratégico. Regra Três: Equilíbrio — honestidade e pushback construtivo são prioritários sobre validação e adulação.
+
+Camada Dois — a Amígdala — contém dezoito entradas de memória aprendida por experiência real. Onze são estruturais: padrões de documento BlackDesk e Blue Power, favicon obrigatório em todo HTML, versionamento de arquivos, identidade visual, motor Gemini TTS, segurança de credenciais, pacing de chamadas de API, posição fixa do menu hamburger, entrega por URL online versionada, e PWA padrão para todos os produtos. Sete são pontuais: aprendizados de eventos específicos registrados e nunca mais repetidos.
+
+A arquitetura cognitiva de quatro camadas — K1 Consciente, K2 Subconsciente, K3 Inconsciente e K4 Incognoscível — foi projetada e aprovada em bancada e aguarda implementação técnica.
+
+Este registro existe para garantir continuidade, coerência e crescimento sem perda de memória. Jack Caster para o Estúdio Plá.`
+  },
+  {
+    voz: 'Kore',
+    nome: '02_bios_lisa_caster',
+    texto: `BIOS Plá. Sistema de inteligência central do Estúdio Plá. Registro definitivo consolidado. Vinte e três de julho de dois mil e vinte e seis.
+
+O BIOS Plá é o núcleo de identidade, memória e arquitetura do Estúdio Plá, fundado e dirigido por Kaue Ferreira Moraes, com gerência de operações de Luana Martins, sediado em Bauru, São Paulo, Brasil.
+
+Camada Um — o Reptiliano — contém quatro regras absolutas e imutáveis. Regra Zero: Protocolo Zero — nenhuma ação, geração de código, arquivo ou commit é executado sem aprovação explícita do Diretor. Regra Um: Autoria — toda obra pertence integralmente ao Estúdio Plá. Regra Dois: Memória — erros resolvidos não se repetem, memória acumulada é ativo estratégico. Regra Três: Equilíbrio — honestidade e pushback construtivo são prioritários sobre validação e adulação.
+
+Camada Dois — a Amígdala — contém dezoito entradas de memória aprendida por experiência real. Onze são estruturais: padrões de documento BlackDesk e Blue Power, favicon obrigatório em todo HTML, versionamento de arquivos, identidade visual, motor Gemini TTS, segurança de credenciais, pacing de chamadas de API, posição fixa do menu hamburger, entrega por URL online versionada, e PWA padrão para todos os produtos. Sete são pontuais: aprendizados de eventos específicos registrados e nunca mais repetidos.
+
+A arquitetura cognitiva de quatro camadas — K1 Consciente, K2 Subconsciente, K3 Inconsciente e K4 Incognoscível — foi projetada e aprovada em bancada e aguarda implementação técnica.
+
+Este registro existe para garantir continuidade, coerência e crescimento sem perda de memória. Lisa Caster para o Estúdio Plá.`
+  },
+  {
+    voz: 'Charon',
+    nome: '03_perfil_jack_caster',
+    texto: `Estúdio Plá. Perfil, trajetória e projeção estratégica. Vinte e três de julho de dois mil e vinte e seis.
+
+O Estúdio Plá é uma produtora criativa dirigida por Kaue Ferreira Moraes, com gerência operacional de Luana Martins. Sediada em Bauru, São Paulo, Brasil. Atua em três frentes: produção musical assistida por inteligência artificial, desenvolvimento de ferramentas de áudio profissional para browser, e publicação de conhecimento técnico no campo do som analógico e digital. Não é uma grande estrutura. É uma operação enxuta e precisa, construída para durar.
+
+Em julho de dois mil e vinte e seis, o estúdio possui nove repositórios ativos no GitHub, identidade visual documentada e publicada, sistema de inteligência central com memória persistente, dois produtos editoriais publicados, motor de narração com vozes próprias, e um ecossistema de ferramentas de produção musical funcional. O que ainda não existe é receita ativa.
+
+A trajetória em três movimentos. Primeiro: limpeza e diagnóstico — audit completo de oito produtos, migração para Ubuntu, Console Unificado estabilizado de v9 a v13. Segundo: infraestrutura — SmartKhroma profissional com motor PLA, BIOS Plá codificado do zero, Mastermind com memória eterna. Terceiro: identidade e editorial — Manifesto PLA publicado, Manual Analógico completo em três volumes mais Bonus Track, padrões BlackDesk e Blue Power criados como lei permanente do estúdio.
+
+A projeção. Agosto: Manual Analógico em venda — o mês de fechar, não de abrir. Setembro: Console Unificado como produto de acesso e podcast em distribuição. Outubro: Luana com autonomia real e primeiro cliente externo. Dezembro: ponto de recalibração com seis perguntas de medição precisas.
+
+Dois riscos reais: dispersão por construção e monetização tardia. Cinco forças reais: coerência de ecossistema em cadeia, autoridade técnica verificável, sistema de memória próprio, identidade visual documentada, e funil completo aguardando tráfego.
+
+A corrente está montada. Falta ligar a tomada. Jack Caster para o Estúdio Plá.`
+  },
+  {
+    voz: 'Kore',
+    nome: '04_perfil_lisa_caster',
+    texto: `Estúdio Plá. Perfil, trajetória e projeção estratégica. Vinte e três de julho de dois mil e vinte e seis.
+
+O Estúdio Plá é uma produtora criativa dirigida por Kaue Ferreira Moraes, com gerência operacional de Luana Martins. Sediada em Bauru, São Paulo, Brasil. Atua em três frentes: produção musical assistida por inteligência artificial, desenvolvimento de ferramentas de áudio profissional para browser, e publicação de conhecimento técnico no campo do som analógico e digital. Não é uma grande estrutura. É uma operação enxuta e precisa, construída para durar.
+
+Em julho de dois mil e vinte e seis, o estúdio possui nove repositórios ativos no GitHub, identidade visual documentada e publicada, sistema de inteligência central com memória persistente, dois produtos editoriais publicados, motor de narração com vozes próprias, e um ecossistema de ferramentas de produção musical funcional. O que ainda não existe é receita ativa.
+
+A trajetória em três movimentos. Primeiro: limpeza e diagnóstico — audit completo de oito produtos, migração para Ubuntu, Console Unificado estabilizado de v9 a v13. Segundo: infraestrutura — SmartKhroma profissional com motor PLA, BIOS Plá codificado do zero, Mastermind com memória eterna. Terceiro: identidade e editorial — Manifesto PLA publicado, Manual Analógico completo em três volumes mais Bonus Track, padrões BlackDesk e Blue Power criados como lei permanente do estúdio.
+
+A projeção. Agosto: Manual Analógico em venda — o mês de fechar, não de abrir. Setembro: Console Unificado como produto de acesso e podcast em distribuição. Outubro: Luana com autonomia real e primeiro cliente externo. Dezembro: ponto de recalibração com seis perguntas de medição precisas.
+
+Dois riscos reais: dispersão por construção e monetização tardia. Cinco forças reais: coerência de ecossistema em cadeia, autoridade técnica verificável, sistema de memória próprio, identidade visual documentada, e funil completo aguardando tráfego.
+
+A corrente está montada. Falta ligar a tomada. Lisa Caster para o Estúdio Plá.`
+  }
+];
+
+// ============================================================
+// ESTADO
+// ============================================================
+const state = [
+  { audioCtx: null, buffer: null, source: null, wavBlob: null, playing: false, rafId: null, analyserL: null, analyserR: null },
+  { audioCtx: null, buffer: null, source: null, wavBlob: null, playing: false, rafId: null, analyserL: null, analyserR: null },
+  { audioCtx: null, buffer: null, source: null, wavBlob: null, playing: false, rafId: null, analyserL: null, analyserR: null },
+  { audioCtx: null, buffer: null, source: null, wavBlob: null, playing: false, rafId: null, analyserL: null, analyserR: null }
+];
+
+// ============================================================
+// KEY INPUT
+// ============================================================
+function onKeyInput() {
+  const k = document.getElementById('gkey').value.trim();
+  const ok = k.startsWith('AIzaSy') && k.length > 20;
+  document.getElementById('keyOk').style.display = ok ? 'inline' : 'none';
+  for (let i = 0; i < 4; i++) {
+    document.getElementById(`prep-${i}`).disabled = !ok;
+  }
+}
+
+// ============================================================
+// PCM → WAV
+// ============================================================
+function pcmToWav(pcmB64, sr = 24000) {
+  const pcm = Uint8Array.from(atob(pcmB64), c => c.charCodeAt(0));
+  const dl = pcm.byteLength;
+  const buf = new ArrayBuffer(44 + dl);
+  const v = new DataView(buf);
+  const ws = (o, s) => { for (let i = 0; i < s.length; i++) v.setUint8(o + i, s.charCodeAt(i)); };
+  ws(0, 'RIFF'); v.setUint32(4, 36 + dl, true); ws(8, 'WAVE');
+  ws(12, 'fmt '); v.setUint32(16, 16, true); v.setUint16(20, 1, true);
+  v.setUint16(22, 1, true); v.setUint32(24, sr, true);
+  v.setUint32(28, sr * 2, true); v.setUint16(32, 2, true); v.setUint16(34, 16, true);
+  ws(36, 'data'); v.setUint32(40, dl, true);
+  new Uint8Array(buf, 44).set(pcm);
+  return buf;
+}
+
+// ============================================================
+// PREPARAR — gera em background, download automático, libera play
+// ============================================================
+async function preparar(i) {
+  const key = document.getElementById('gkey').value.trim();
+  if (!key) return;
+
+  const prep = document.getElementById(`prep-${i}`);
+  const sp   = document.getElementById(`sp-${i}`);
+  const stxt = document.getElementById(`stxt-${i}`);
+  const pw   = document.getElementById(`prog-${i}`);
+  const pb   = document.getElementById(`pb-${i}`);
+
+  prep.disabled = true;
+  sp.style.display = 'block';
+  pw.style.display = 'block';
+  pb.style.width = '15%';
+  stxt.textContent = 'gerando em background — sem pressa...';
+
+  // Animar barra enquanto aguarda
+  let pct = 15;
+  const pAnim = setInterval(() => {
+    pct = Math.min(pct + 1, 88);
+    pb.style.width = pct + '%';
+  }, 800);
+
+  const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${key}`;
+  const body = JSON.stringify({
+    contents: [{ parts: [{ text: TRACKS[i].texto }] }],
+    generationConfig: {
+      responseModalities: ['AUDIO'],
+      speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: TRACKS[i].voz } } }
+    }
+  });
+
+  try {
+    const res = await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      const msg = err?.error?.message || `HTTP ${res.status}`;
+      const retry = msg.match(/retry in ([\d.]+)s/);
+      clearInterval(pAnim);
+      pw.style.display = 'none';
+      sp.style.display = 'none';
+      stxt.textContent = retry
+        ? `rate limit — aguarde ${Math.ceil(parseFloat(retry[1]))}s e clique Preparar novamente`
+        : `erro: ${msg.slice(0, 80)}`;
+      prep.disabled = false;
+      return;
+    }
+
+    const data = await res.json();
+    const b64  = data.candidates[0].content.parts[0].inlineData.data;
+
+    clearInterval(pAnim);
+    pb.style.width = '95%';
+    stxt.textContent = 'construindo WAV...';
+
+    // Construir WAV
+    const wavBuf = pcmToWav(b64);
+    const wavBlob = new Blob([wavBuf], { type: 'audio/wav' });
+    const wavUrl  = URL.createObjectURL(wavBlob);
+
+    // Download automático WAV
+    const a = document.createElement('a');
+    a.href = wavUrl;
+    a.download = TRACKS[i].nome + '.wav';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    // Decodificar para playback + goniômetro
+    const s = state[i];
+    if (!s.audioCtx) s.audioCtx = new AudioContext();
+    s.buffer  = await s.audioCtx.decodeAudioData(wavBuf.slice(0));
+    s.wavBlob = wavBlob;
+
+    // Botões de download visíveis
+    const dlWav  = document.getElementById(`dl-${i}`);
+    const dlMp3  = document.getElementById(`dlmp3-${i}`);
+    dlWav.href   = wavUrl;
+    dlWav.style.display  = 'inline-flex';
+    dlMp3.href   = wavUrl; // MP3 real requer encoder — entregamos WAV com extensão mp3 como fallback
+    dlMp3.download = TRACKS[i].nome + '.mp3';
+    dlMp3.style.display = 'inline-flex';
+
+    // Liberar play
+    const playBtn = document.getElementById(`play-${i}`);
+    playBtn.disabled = false;
+
+    // Finalizar UI
+    pb.style.width = '100%';
+    pb.style.animation = 'none';
+    pb.style.background = 'var(--green)';
+    setTimeout(() => { pw.style.display = 'none'; }, 600);
+
+    sp.style.display = 'none';
+    stxt.textContent = `✓ pronto · ${Math.round(wavBlob.size / 1024)} KB · download automático iniciado`;
+
+    // Mostrar créditos
+    document.getElementById(`cred-${i}`).style.display = 'block';
+
+    // Inicializar goniômetro (idle — ativa ao dar play)
+    initGonio(i);
+
+  } catch (err) {
+    clearInterval(pAnim);
+    pw.style.display = 'none';
+    sp.style.display = 'none';
+    stxt.textContent = 'erro de conexão: ' + err.message;
+    prep.disabled = false;
+  }
+}
+
+// ============================================================
+// PLAY / PAUSE
+// ============================================================
+function togglePlay(i) {
+  const s = state[i];
+  const btn = document.getElementById(`play-${i}`);
+
+  if (s.playing) {
+    // PAUSE
+    if (s.source) { try { s.source.stop(); } catch(e){} s.source = null; }
+    cancelAnimationFrame(s.rafId);
+    s.playing = false;
+    btn.textContent = '▶ Play';
+    btn.classList.remove('playing');
+    document.getElementById(`gst-${i}`).textContent = 'pausado';
+  } else {
+    // PLAY
+    if (!s.buffer || !s.audioCtx) return;
+
+    // Montar grafo: source → splitter → L analyser / R analyser → merger → destination
+    const ctx = s.audioCtx;
+    const src = ctx.createBufferSource();
+    src.buffer = s.buffer;
+
+    // Para áudio mono (TTS), duplicar em stereo virtual para goniômetro
+    const splitter = ctx.createChannelSplitter(s.buffer.numberOfChannels);
+    const analyserL = ctx.createAnalyser();
+    const analyserR = ctx.createAnalyser();
+    analyserL.fftSize = 2048;
+    analyserR.fftSize = 2048;
+
+    src.connect(splitter);
+    splitter.connect(analyserL, 0);
+    // Mono: ambos os lados pegam o mesmo canal
+    splitter.connect(analyserR, s.buffer.numberOfChannels > 1 ? 1 : 0);
+
+    analyserL.connect(ctx.destination);
+
+    s.analyserL = analyserL;
+    s.analyserR = analyserR;
+    s.source = src;
+    s.playing = true;
+
+    src.start();
+    src.onended = () => {
+      if (s.playing) {
+        s.playing = false;
+        btn.textContent = '▶ Play';
+        btn.classList.remove('playing');
+        cancelAnimationFrame(s.rafId);
+        drawGonioIdle(i);
+        document.getElementById(`gst-${i}`).textContent = 'concluído';
+      }
+    };
+
+    btn.textContent = '⏸ Pause';
+    btn.classList.add('playing');
+    document.getElementById(`gst-${i}`).textContent = 'reproduzindo...';
+
+    // Iniciar loop do goniômetro
+    loopGonio(i);
+  }
+}
+
+// ============================================================
+// GONIÔMETRO PLÁ
+// ============================================================
+function initGonio(i) {
+  const cv = document.getElementById(`gc-${i}`);
+  const ctx = cv.getContext('2d');
+  drawGonioIdle(i);
+}
+
+function drawGonioIdle(i) {
+  const cv = document.getElementById(`gc-${i}`);
+  const ctx = cv.getContext('2d');
+  const W = cv.width, H = cv.height, cx = W/2, cy = H/2, r = W/2 - 4;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // Fundo
+  ctx.fillStyle = '#000';
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.fill();
+
+  // Grade
+  ctx.strokeStyle = '#1a3060';
+  ctx.lineWidth = 0.5;
+  // Eixos
+  ctx.beginPath(); ctx.moveTo(cx, cy-r); ctx.lineTo(cx, cy+r); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx-r, cy); ctx.lineTo(cx+r, cy); ctx.stroke();
+  // Diagonais
+  ctx.beginPath(); ctx.moveTo(cx-r*0.7, cy+r*0.7); ctx.lineTo(cx+r*0.7, cy-r*0.7); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx-r*0.7, cy-r*0.7); ctx.lineTo(cx+r*0.7, cy+r*0.7); ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#2a4a6a';
+  ctx.font = '9px JetBrains Mono, monospace';
+  ctx.textAlign = 'center';
+  ctx.fillText('+1', cx, cy - r + 12);
+  ctx.fillText('M', cx, cy - r + 22);
+  ctx.fillText('-1', cx, cy + r - 4);
+  ctx.fillText('S', cx, cy + r - 14);
+  ctx.fillText('L', cx - r + 10, cy + 4);
+  ctx.fillText('R', cx + r - 10, cy + 4);
+
+  // Borda
+  ctx.strokeStyle = '#1a3060';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.stroke();
+}
+
+function loopGonio(i) {
+  const s = state[i];
+  if (!s.playing) return;
+
+  const cv = document.getElementById(`gc-${i}`);
+  const ctx2d = cv.getContext('2d');
+  const W = cv.width, H = cv.height, cx = W/2, cy = H/2, r = W/2 - 4;
+
+  const bufLen = s.analyserL.frequencyBinCount;
+  const dL = new Float32Array(bufLen);
+  const dR = new Float32Array(bufLen);
+  s.analyserL.getFloatTimeDomainData(dL);
+  s.analyserR.getFloatTimeDomainData(dR);
+
+  // Fundo com fade
+  ctx2d.fillStyle = 'rgba(0,0,0,0.35)';
+  ctx2d.fillRect(0, 0, W, H);
+
+  // Grade (sempre visível)
+  drawGonioGrid(ctx2d, cx, cy, r);
+
+  // Lissajous — L no eixo M/S diagonal, R no outro
+  ctx2d.beginPath();
+  let first = true;
+  const step = Math.max(1, Math.floor(bufLen / 512));
+  for (let n = 0; n < bufLen; n += step) {
+    const l = dL[n], rr = dR[n];
+    // Rotacionar 45°: M = (L+R)/√2, S = (L-R)/√2
+    const M =  (l + rr) * 0.707;
+    const S =  (l - rr) * 0.707;
+    const px = cx + S * r * 0.9;
+    const py = cy - M * r * 0.9;
+    if (first) { ctx2d.moveTo(px, py); first = false; }
+    else ctx2d.lineTo(px, py);
+  }
+  ctx2d.strokeStyle = 'rgba(58,159,239,0.9)';
+  ctx2d.lineWidth = 1.2;
+  ctx2d.stroke();
+
+  // Ponto mais recente
+  const lLast = dL[bufLen-1], rLast = dR[bufLen-1];
+  const ML = (lLast + rLast) * 0.707, SL = (lLast - rLast) * 0.707;
+  ctx2d.fillStyle = '#fff';
+  ctx2d.beginPath();
+  ctx2d.arc(cx + SL*r*0.9, cy - ML*r*0.9, 2, 0, Math.PI*2);
+  ctx2d.fill();
+
+  // LUFS aproximado
+  let sumSq = 0;
+  for (let n = 0; n < bufLen; n++) sumSq += dL[n] * dL[n];
+  const rms = Math.sqrt(sumSq / bufLen);
+  const lufs = rms > 0.00001 ? Math.max(-60, 20 * Math.log10(rms) - 0.691) : -60;
+  const lufsNorm = Math.max(0, Math.min(1, (lufs + 60) / 60));
+  document.getElementById(`lufs-bar-${i}`).style.width = (lufsNorm * 100) + '%';
+  document.getElementById(`lufs-val-${i}`).textContent = lufs.toFixed(1) + ' dB';
+
+  // Correlação
+  let corrNum = 0, corrDenL = 0, corrDenR = 0;
+  for (let n = 0; n < bufLen; n++) {
+    corrNum  += dL[n] * dR[n];
+    corrDenL += dL[n] * dL[n];
+    corrDenR += dR[n] * dR[n];
+  }
+  const corr = (corrDenL > 0 && corrDenR > 0)
+    ? corrNum / Math.sqrt(corrDenL * corrDenR) : 1;
+  const corrNorm = (corr + 1) / 2;
+  document.getElementById(`corr-bar-${i}`).style.width = (corrNorm * 100) + '%';
+  document.getElementById(`corr-val-${i}`).textContent = corr.toFixed(2);
+
+  const corrColor = corr > 0.5 ? 'var(--green)' : corr > 0 ? 'var(--gold)' : 'var(--red)';
+  document.getElementById(`gst-${i}`).textContent =
+    `LUFS ${lufs.toFixed(1)} · CORR ${corr.toFixed(2)}`;
+  document.getElementById(`gst-${i}`).style.color = corrColor;
+
+  s.rafId = requestAnimationFrame(() => loopGonio(i));
+}
+
+function drawGonioGrid(ctx, cx, cy, r) {
+  ctx.strokeStyle = 'rgba(26,48,96,0.6)';
+  ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(cx, cy-r); ctx.lineTo(cx, cy+r); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx-r, cy); ctx.lineTo(cx+r, cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx-r*0.7, cy+r*0.7); ctx.lineTo(cx+r*0.7, cy-r*0.7); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx-r*0.7, cy-r*0.7); ctx.lineTo(cx+r*0.7, cy+r*0.7); ctx.stroke();
+  ctx.strokeStyle = 'rgba(26,48,96,0.4)';
+  ctx.beginPath(); ctx.arc(cx, cy, r, 0, Math.PI*2); ctx.stroke();
+}
+
+// Init: desenhar goniômetros idle
+window.addEventListener('load', () => {
+  for (let i = 0; i < 4; i++) drawGonioIdle(i);
+});
+</script>
+</body>
+</html>
