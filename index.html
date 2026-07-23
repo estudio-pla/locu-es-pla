@@ -309,10 +309,9 @@ body {
   Vozes: Jack Caster (Charon) e Lisa Caster (Kore) · Gemini TTS 2.5 Flash · WAV 24kHz · Com Goniômetro Plá</p>
 </div>
 
-<div class="key-bar">
-  <span class="key-label">GEMINI API KEY</span>
-  <input class="key-input" type="password" id="gkey" placeholder="AIzaSy..." oninput="onKeyInput()">
-  <span class="key-ok" id="keyOk">✓ KEY PRONTA</span>
+<div class="key-bar" style="border-left-color:var(--green);">
+  <span class="key-label" style="color:var(--green);">✓ GEMINI TTS PRONTO</span>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--dim);">Motor configurado · Gemini 2.5 Flash TTS · Vozes Charon e Kore</span>
 </div>
 
 <div class="main">
@@ -346,7 +345,7 @@ body {
       </div>
     </div>
     <div class="controls">
-      <button class="btn-preparar" id="prep-0" onclick="preparar(0)" disabled>⬇ Preparar</button>
+      <button class="btn-preparar" id="prep-0" onclick="preparar(0)">⬇ Preparar</button>
       <button class="btn-play" id="play-0" onclick="togglePlay(0)" disabled>▶ Play</button>
       <a class="btn-dl" id="dl-0" download="01_bios_jack_caster.wav">↓ WAV</a>
       <a class="btn-dl" id="dlmp3-0" download="01_bios_jack_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
@@ -394,7 +393,7 @@ body {
       </div>
     </div>
     <div class="controls">
-      <button class="btn-preparar" id="prep-1" onclick="preparar(1)" disabled>⬇ Preparar</button>
+      <button class="btn-preparar" id="prep-1" onclick="preparar(1)">⬇ Preparar</button>
       <button class="btn-play" id="play-1" onclick="togglePlay(1)" disabled>▶ Play</button>
       <a class="btn-dl" id="dl-1" download="02_bios_lisa_caster.wav">↓ WAV</a>
       <a class="btn-dl" id="dlmp3-1" download="02_bios_lisa_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
@@ -442,7 +441,7 @@ body {
       </div>
     </div>
     <div class="controls">
-      <button class="btn-preparar" id="prep-2" onclick="preparar(2)" disabled>⬇ Preparar</button>
+      <button class="btn-preparar" id="prep-2" onclick="preparar(2)">⬇ Preparar</button>
       <button class="btn-play" id="play-2" onclick="togglePlay(2)" disabled>▶ Play</button>
       <a class="btn-dl" id="dl-2" download="03_perfil_jack_caster.wav">↓ WAV</a>
       <a class="btn-dl" id="dlmp3-2" download="03_perfil_jack_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
@@ -490,7 +489,7 @@ body {
       </div>
     </div>
     <div class="controls">
-      <button class="btn-preparar" id="prep-3" onclick="preparar(3)" disabled>⬇ Preparar</button>
+      <button class="btn-preparar" id="prep-3" onclick="preparar(3)">⬇ Preparar</button>
       <button class="btn-play" id="play-3" onclick="togglePlay(3)" disabled>▶ Play</button>
       <a class="btn-dl" id="dl-3" download="04_perfil_lisa_caster.wav">↓ WAV</a>
       <a class="btn-dl" id="dlmp3-3" download="04_perfil_lisa_caster.mp3" style="color:var(--gold);border-color:rgba(212,168,58,.3);">↓ MP3</a>
@@ -601,14 +600,9 @@ const state = [
 // ============================================================
 // KEY INPUT
 // ============================================================
-function onKeyInput() {
-  const k = document.getElementById('gkey').value.trim();
-  const ok = k.startsWith('AIzaSy') && k.length > 20;
-  document.getElementById('keyOk').style.display = ok ? 'inline' : 'none';
-  for (let i = 0; i < 4; i++) {
-    document.getElementById(`prep-${i}`).disabled = !ok;
-  }
-}
+const GEMINI_KEY = 'AIzaSyBmsEVLVOwNlwnZ7zQOKFFPZL-fbnDJkoc';
+
+function onKeyInput() {}  // não usado — key embutida
 
 // ============================================================
 // PCM → WAV
@@ -632,8 +626,7 @@ function pcmToWav(pcmB64, sr = 24000) {
 // PREPARAR — gera em background, download automático, libera play
 // ============================================================
 async function preparar(i) {
-  const key = document.getElementById('gkey').value.trim();
-  if (!key) return;
+  const key = GEMINI_KEY;
 
   const prep = document.getElementById(`prep-${i}`);
   const sp   = document.getElementById(`sp-${i}`);
